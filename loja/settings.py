@@ -39,9 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-
-    # TODO: Remover debug toolbar
-    'debug_toolbar',
+    'pedido',
+    'perfil',
+    'produto',
 ]
 
 MIDDLEWARE = [
@@ -53,9 +53,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
-
-    # TODO: Remover debug toolbar
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 'loja.urls'
@@ -129,12 +126,11 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'templates/static')
+    os.path.join('templates/static')
 ]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
 
 MESSAGE_TAGS = {
     constants.DEBUG: 'alert-info',
@@ -153,12 +149,6 @@ SESSION_SAVE_EVERY_REQUEST = False
 # Serializer - Padrão JSON
 # SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
 
-# TODO: Remover debug toolbar
-INTERNAL_IPS = [
-    # ...
-    '127.0.0.1',
-    # ...
-]
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
